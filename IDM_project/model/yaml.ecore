@@ -1,3 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    name=""/>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="test" nsURI="testuri" nsPrefix="testprefix">
+  <eClassifiers xsi:type="ecore:EClass" name="Application">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="config" upperBound="-1"
+        eType="#//Config" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" upperBound="-1"
+        eType="#//Entity" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Config">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="baseName" unique="false"
+        eType="#//BaseName"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="appType" unique="false"
+        eType="#//AppType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="packageName" eType="#//PackageName"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataBase" unique="false"
+        eType="#//DataBaseName"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="BaseName" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Entity">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//Name"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="AppType" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="PackageName" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="DataBaseName" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="Name" instanceClassName="java.lang.String"/>
+</ecore:EPackage>
