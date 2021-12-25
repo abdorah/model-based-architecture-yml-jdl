@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="test" nsURI="testuri" nsPrefix="testprefix">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="jdl" nsURI="testuri" nsPrefix="jdl">
   <eClassifiers xsi:type="ecore:EClass" name="Application">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="config" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="config" lowerBound="1"
         eType="#//Config" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="entity" upperBound="-1"
         eType="#//Entity" containment="true"/>
@@ -29,8 +29,8 @@
   <eClassifiers xsi:type="ecore:EDataType" name="DataBaseName" instanceClassName="java.lang.String"/>
   <eClassifiers xsi:type="ecore:EDataType" name="Name" instanceClassName="java.lang.String"/>
   <eClassifiers xsi:type="ecore:EClass" name="DTO">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" upperBound="-1"
-        eType="#//Entity" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" lowerBound="1"
+        upperBound="-1" eType="#//Entity" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Service"/>
 </ecore:EPackage>

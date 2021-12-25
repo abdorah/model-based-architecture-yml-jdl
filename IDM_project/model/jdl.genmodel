@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/IDM_project/src" modelPluginID="IDM_project" modelName="Jdl"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>jdl.ecore</foreignModel>
+  <genPackages prefix="Jdl" disposableProviderFactory="true" ecorePackage="jdl.ecore#/">
+    <genDataTypes ecoreDataType="jdl.ecore#//BaseName"/>
+    <genDataTypes ecoreDataType="jdl.ecore#//AppType"/>
+    <genDataTypes ecoreDataType="jdl.ecore#//PackageName"/>
+    <genDataTypes ecoreDataType="jdl.ecore#//DataBaseName"/>
+    <genDataTypes ecoreDataType="jdl.ecore#//Name"/>
+    <genClasses ecoreClass="jdl.ecore#//Application">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference jdl.ecore#//Application/config"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference jdl.ecore#//Application/entity"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference jdl.ecore#//Application/dto"/>
+    </genClasses>
+    <genClasses ecoreClass="jdl.ecore#//Config">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute jdl.ecore#//Config/baseName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute jdl.ecore#//Config/appType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute jdl.ecore#//Config/packageName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute jdl.ecore#//Config/dataBase"/>
+    </genClasses>
+    <genClasses ecoreClass="jdl.ecore#//Entity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute jdl.ecore#//Entity/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference jdl.ecore#//Entity/service"/>
+    </genClasses>
+    <genClasses ecoreClass="jdl.ecore#//DTO">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference jdl.ecore#//DTO/entity"/>
+    </genClasses>
+    <genClasses ecoreClass="jdl.ecore#//Service"/>
+  </genPackages>
+</genmodel:GenModel>
