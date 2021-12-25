@@ -240,6 +240,10 @@ D'aprés le papier de recherche de Jean Bézivin, Hugo Bruneliere, Frédéric Jo
 D'aprés ce qui précède, nous avons pensé que ça serait trés interessant de réaliser un DSL pour JDL en s'inspirant de YAML.
 
 ## Architecture général du projet
+MDSE fournit des langages appropriés pour définir les transformations de modèles afin de fournir aux concepteurs des solutions optimisées pour spécifier les règles de transformation. Ces langages peuvent être utilisés pour définir des transformations de modèle en termes de modèles de transformation qui sont généralement appliqués sur des modèles selon certaines règles de correspondance vérifiées sur des éléments de modèle. Ces règles de transformation peuvent être définies selon différentes approches : la transformation peut être écrite manuellement à partir de zéro par un développeur, ou peut être défini comme une spécification raffinée d'une spécification existante. Alternativement, les transformations elles-mêmes peuvent être produites automatiquement à partir de certaines règles de mappage de niveau supérieur entre les modèles. Le schema suivant résume l'architecture générale de cette technique.
+
+![](images/architecrture.jpeg)
+
 
 ## Réalisation et gestion du projet
 
