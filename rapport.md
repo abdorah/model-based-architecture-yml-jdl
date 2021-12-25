@@ -3,12 +3,13 @@
 1. Explication de concept du projet
 2. introduction a yaml
 3. introduction jdl
-4. Problematique :dsl
+4. Problematique et dsl
 - II
-5. architecture general du projet; les meta modèles
+5. architecture general du projet
 - III
-6. realisation
-7. mode du travail
+6. mode du travail
+7. realisation
+8. les meta modèles
 
 ## Concepts généraux du projet
 
@@ -236,4 +237,21 @@ C'est quoi une DSL? Domaine specific languages, sont les languages  dont les sp�
 D'aprés le papier de recherche de Jean Bézivin, Hugo Bruneliere, Frédéric Jouault, et Ivan Kurtev intitulé "Model engineering support for tool interoperability":
 > In our work we have a specific bias to using "agile metamodeling" with small metamodels. This contradicts many mainstream proposals that use large and predefined "one size fits all" metamodels like UML 2.0. We need more experiments to assess the advantages and drawbacks of each of these approaches named below "agile modeling" and "monolithic modeling". 
 
-D'aprés cette citation, nous avons pensé que ça serait trés interessant de réaliser un DSL pour JDL en s'inspirant de YAML.
+D'aprés ce qui précède, nous avons pensé que ça serait trés interessant de réaliser un DSL pour JDL en s'inspirant de YAML.
+
+## Architecture général du projet
+
+## Réalisation et gestion du projet
+
+1. **Mode de travail**
+
+Il est primordial de bien gérer chaque projet et d'avoir une structure claire et optimisée à suivre. Du coût, nous avons utiliser les outils offers par la platforme Github pour la gestion de ce projet:
+ 
+ - Chaque tâche est représenté par un "issue", quoi doit être assigné manuallement à un memebre d'équipe:
+ ![issues](images/issues.png)
+ - Chaque issue est représenté par un ticket sur un tableau ayant la même structure comme les tableux trello. Il contient touts les informations necessaire sur le type, la définition, et l'état d'issue qu'en concerne:
+ ![modes](images/mode-trello.png)
+ - Le modèle de tableau peu ếtre représenté aussi sous-forme d'un tableau contenant les mêmes informations d'une manières plus facile à parcourir:
+ ![modes](images/mode-table.png)
+ - Le cycle de vie d'un ticket dépend complétement de l'issue qu'en concerne. Il se crée, prendre les dernières modification du issue, et se label comme terminer si le issue est cloturé:
+ ![modes](images/mode-automation.png)
