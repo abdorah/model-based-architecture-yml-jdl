@@ -255,3 +255,12 @@ Il est primordial de bien gérer chaque projet et d'avoir une structure claire e
  ![modes](images/mode-table.png)
  - Le cycle de vie d'un ticket dépend complétement de l'issue qu'en concerne. Il se crée, prendre les dernières modification du issue, et se label comme terminer si le issue est cloturé:
  ![modes](images/mode-automation.png)
+
+2. **Structure du projet**
+
+La téchnologie utilisée dans ce projet est EMF. qui représente un ensemble des outils trés puissants pour le MDSE. 
+ 
+ - Le projet à la structure suivante:
+ ![eclipse](images/eclipse-jdl.png)
+  - Aussi pour YAML:
+ ![eclipse](images/eclipse_yaml.png)
