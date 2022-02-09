@@ -11,7 +11,7 @@
       <package
             uri="testuri"
             class="test.TestPackage"
-            genModel="model/yaml.genmodel"/>
+            genModel="model/yml.genmodel"/>
    </extension>
 
 </plugin>

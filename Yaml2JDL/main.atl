@@ -1,0 +1,6 @@
+-- @path MM1=/IDM_project/model/jdl.ecore
+-- @path MM2=/IDM_project/model/yml.ecore
+
+module main;
+create OUT : MM1 from IN1 : MM2;
+
