@@ -4,3 +4,40 @@
 module main;
 create OUT : MM1 from IN1 : MM2;
 
+rule entry2application {
+	from src:MM2!Entry
+	to target:MM1!Application (
+		
+	)	
+}
+
+rule element2config {
+	from src:MM2!Element
+	to target:MM1!Config (
+		baseName <- src.text,
+        appType <- src.text,
+        packageName <- src.text,
+        dataBase <- src.text
+	)	
+}
+
+rule element2dto {
+	from src:MM2!Element
+	to target:MM1!DTO (
+		
+	)	
+}
+
+rule element2entity {
+	from src:MM2!Element
+	to target:MM1!Entity (
+		name <- src.text
+	)	
+}
+
+rule element2service {
+	from src:MM2!Element
+	to target:MM1!Service (
+		
+	)	
+}
