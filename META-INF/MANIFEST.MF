@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: org.xtext.ensias.yjdsl
+Bundle-ManifestVersion: 2
+Bundle-Name: org.xtext.ensias.yjdsl
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.xtext.ensias.yjdsl; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: IDM_project,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: org.xtext.ensias.yjdsl,
+ org.xtext.ensias.yjdsl.parser.antlr,
+ org.xtext.ensias.yjdsl.scoping,
+ org.xtext.ensias.yjdsl.formatting2,
+ org.xtext.ensias.yjdsl.services,
+ org.xtext.ensias.yjdsl.parser.antlr.internal,
+ org.xtext.ensias.yjdsl.validation,
+ org.xtext.ensias.yjdsl.serializer,
+ org.xtext.ensias.yjdsl.generator
+Import-Package: org.apache.log4j
