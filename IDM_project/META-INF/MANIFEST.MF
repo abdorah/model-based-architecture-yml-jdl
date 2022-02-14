@@ -8,9 +8,12 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-11
-Export-Package: test,
- test.impl,
- test.util
+Export-Package: yml,
+ yml.impl,
+ yml.util,
+ jdl,
+ jdl.impl,
+ jdl.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy

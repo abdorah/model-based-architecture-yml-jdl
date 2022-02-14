@@ -7,10 +7,19 @@
 <plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated yaml -->
+      <!-- @generated jdl -->
       <package
             uri="testuri"
-            class="test.TestPackage"
+            class="jdl.JdlPackage"
+            genModel="model/jdl.genmodel"/>
+   </extension>
+
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated yml -->
+      <package
+            uri="ymluri"
+            class="yml.YmlPackage"
             genModel="model/yml.genmodel"/>
    </extension>
 

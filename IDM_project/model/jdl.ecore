@@ -6,31 +6,17 @@
         eType="#//Config" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="entity" upperBound="-1"
         eType="#//Entity" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="dto" upperBound="-1" eType="#//DTO"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Config">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="baseName" unique="false"
-        eType="#//BaseName"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="appType" unique="false"
-        eType="#//AppType"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="packageName" eType="#//PackageName"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataBase" unique="false"
-        eType="#//DataBaseName"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="packageName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="dataBaseType" unique="false"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EDataType" name="BaseName" instanceClassName="java.lang.String"/>
   <eClassifiers xsi:type="ecore:EClass" name="Entity">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//Name"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="service" upperBound="-1"
-        eType="#//Service" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EDataType" name="AppType" instanceClassName="java.lang.String"/>
-  <eClassifiers xsi:type="ecore:EDataType" name="PackageName" instanceClassName="java.lang.String"/>
-  <eClassifiers xsi:type="ecore:EDataType" name="DataBaseName" instanceClassName="java.lang.String"/>
-  <eClassifiers xsi:type="ecore:EDataType" name="Name" instanceClassName="java.lang.String"/>
-  <eClassifiers xsi:type="ecore:EClass" name="DTO">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="entity" lowerBound="1"
-        upperBound="-1" eType="#//Entity" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Service"/>
 </ecore:EPackage>

@@ -5,10 +5,11 @@
     complianceLevel="5.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>yml.ecore</foreignModel>
   <genPackages prefix="Yml" disposableProviderFactory="true" ecorePackage="yml.ecore#/">
-    <genClasses ecoreClass="yml.ecore#//Entry"/>
-    <genClasses ecoreClass="yml.ecore#//Element">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference yml.ecore#//Element/entry"/>
+    <genClasses ecoreClass="yml.ecore#//Leaf">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yml.ecore#//Leaf/applicationName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yml.ecore#//Leaf/applicationType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yml.ecore#//Leaf/databaseType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute yml.ecore#//Leaf/packageName"/>
     </genClasses>
-    <genClasses ecoreClass="yml.ecore#//Text"/>
   </genPackages>
 </genmodel:GenModel>
