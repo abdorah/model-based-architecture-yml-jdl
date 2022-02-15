@@ -19,45 +19,24 @@
     filecolor=black,
     urlcolor=black,
 }
+% if pdftex, luatex, or xetex
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
-  \usepackage{textcomp} % provide euro and other symbols
-\else % if luatex or xetex
+  \usepackage{textcomp}
+\else 
   \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \fi
-% Use upquote if available, for straight quotes in verbatim environments
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-\IfFileExists{microtype.sty}{% use microtype if available
-  \usepackage[]{microtype}
-  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
-}{}
-\makeatletter
-\@ifundefined{KOMAClassName}{% if non-KOMA class
-  \IfFileExists{parskip.sty}{%
-    \usepackage{parskip}
-  }{% else
-    \setlength{\parindent}{0pt}
-    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
-}{% if KOMA class
-  \KOMAoptions{parskip=half}}
-\makeatother
 \usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\hypersetup{
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
+\urlstyle{same}
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
 \newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
 \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-% Add ',fontsize=\small' for more characters per line
 \newenvironment{Shaded}{}{}
 \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
 \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
@@ -95,25 +74,6 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \graphicspath{{images/}}
-\makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-% Set default figure placement to htbp
-\makeatletter
-\def\fps@figure{htbp}
-\makeatother
-\setlength{\emergencystretch}{3em} % prevent overfull lines
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
 
 \author{Kotbi Abderrahmane, El Hafi Abdessamad}
 \date{Februray 15th, 2022}
@@ -134,6 +94,7 @@
 \newpage
 
 \listoffigures
+\addcontentsline{toc}{chapter}{Table des figures}
 
 \newpage
 
@@ -154,17 +115,17 @@
 \setcounter{page}{1}
 
 \chapter{Objectifs et description foncitionnelle du projet}
-\fancyhead[L]{\textbf{Chapitre: Objectifs et description foncitionnelle du projet}}
+\fancyhead[L]{\textbf{Chapitre \thechapter: Objectifs et description foncitionnelle du projet}}
 \fancyhead[R]{\hspace*{5cm}}
 \input{chapters/Objectifs&DescriptionFoncitionnelle.tex}	
 
 \chapter{Description des méta-modèles}
-\fancyhead[L]{\textbf{Chapitre: Description des méta-modèles}}
+\fancyhead[L]{\textbf{Chapitre \thechapter: Description des méta-modèles}}
 \fancyhead[R]{\hspace*{5cm}}
 \input{chapters/DescriptionMetaModels.tex}	
 
 \chapter{Description des entrées, des transformations et des sorties}
-\fancyhead[L]{\textbf{Chapitre: Description des entrées, des transformations et des sorties}}
+\fancyhead[L]{\textbf{Chapitre \thechapter: Description des entrées, des transformations et des sorties}}
 \fancyhead[R]{\hspace*{5cm}}
 \input{chapters/DescriptionEntreeTransformationSortie.tex}	
 
