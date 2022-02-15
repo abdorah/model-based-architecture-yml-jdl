@@ -9,13 +9,14 @@ La transformation text-à-modèle est la première partie dans laquelle
 on reçoit en entrée un fichier \texttt{.yml}. Il a la syntaxe normal
 de \texttt{YAML} avec respect des régles définit en méta-modèle créé
 auparavant. Cela se manifeste par l'utilisation des mots-clés définit
-en \texttt{xtext} et inspirée du méta-modèles.\\
+en \texttt{xtext} et inspirée du méta-modèles.
+
 \begin{figure}[H]
   \begin{center}
       \fbox{
       \includegraphics[width=16cm]{issues.png}
       }
-      \caption{}
+      \caption{Les entrées de la transformation T2M}
   \end{center}
 \end{figure}
 
@@ -24,25 +25,27 @@ basant sur le modèle généré aprés la tranformation T2M. les deux
 modèles générée sont des fichiers \texttt{XML}. L'outil de la
 transformation utilisé est \texttt{ATL}. À la base du fichier
 \texttt{main.atl}, où on a définit les régles de la transformation, on
-génére le modèle \texttt{JDL}.\\
+génére le modèle \texttt{JDL}.
+
 \begin{figure}[H]
   \begin{center}
       \fbox{
       \includegraphics[width=16cm]{issues.png}
       }
-      \caption{}
+      \caption{La transformation M2M}
   \end{center}
 \end{figure}
 
 Enfin, on arrive à effectuer un tranformation \texttt{M2T} en
 utilisant \texttt{xtext} une autre fois. Ceci permet de générer un
-fichier \texttt{.jdl}, réspectant la syntaxe de \texttt{JDL}.\\
+fichier \texttt{.jdl}, réspectant la syntaxe de \texttt{JDL}.
+
 \begin{figure}[H]
   \begin{center}
       \fbox{
       \includegraphics[width=16cm]{issues.png}
       }
-      \caption{}
+      \caption{Les sorties de la transformation M2T}
   \end{center}
 \end{figure}
 
@@ -53,50 +56,54 @@ claire et optimisée à suivre. Du coût, nous avons utiliser les outils
 offers par la platforme Github pour la gestion de ce projet:
 
 Chaque tâche est représenté par un "issue", quoi doit être assigné
-manuallement à un memebre d'équipe:\\
+manuallement à un memebre d'équipe:
+
 \begin{figure}[H]
   \begin{center}
       \fbox{
       \includegraphics[width=16cm]{issues.png}
       }
-      \caption{}
+      \caption{Liste des issues en Github}
   \end{center}
 \end{figure}
 
 Chaque issue est représenté par un ticket sur un tableau ayant la même
 structure comme les tableux trello. Il contient touts les informations
 necessaire sur le type, la définition, et l'état d'issue qu'en
-concerne:\\
+concerne:
+
 \begin{figure}[H]
   \begin{center}
       \fbox{
       \includegraphics[width=16cm]{mode-trello.png}
       }
-      \caption{}
+      \caption{Tableau Kanban pour la gestion des tâches}
   \end{center}
 \end{figure}
 
 Le modèle de tableau peut être représenté aussi sous-forme d'un tableau
 contenant les mêmes informations d'une manières plus facile à
-parcourir:\\
+parcourir:
+
 \begin{figure}[H]
   \begin{center}
       \fbox{
       \includegraphics[width=16cm]{mode-table.png}
       }
-      \caption{}
+      \caption{Tableau d'historiques des tâches}
   \end{center}
 \end{figure}
 
 Le cycle de vie d'un ticket dépend complétement de l'issue qu'en
 concerne. Il se crée, prendre les dernières modification du issue, et
-se label comme terminer si le issue est cloturé:\\
+se label comme terminer si le issue est cloturé:
+
 \begin{figure}[H]
   \begin{center}
       \fbox{
       \includegraphics[width=16cm]{mode-automation.png}
       }
-      \caption{}
+      \caption{Processus d'automation de la transformation des tâches en issues}
   \end{center}
 \end{figure}
 
@@ -112,7 +119,7 @@ Le projet à la structure suivante:
       \fbox{
       \includegraphics[width=16cm]{eclipse-jdl.png}
       }
-      \caption{}
+      \caption{Diagramme des classes du méta-modèle de JDL}
   \end{center}
 \end{figure}
 
@@ -123,6 +130,6 @@ Aussi pour YAML:
       \fbox{
       \includegraphics[width=16cm]{eclipse_yaml.png}
       }
-      \caption{}
+      \caption{Diagramme des classes du méta-modèle de YAML}
   \end{center}
 \end{figure}
