@@ -1,0 +1,364 @@
+\section{Introduction}
+
+Dans cette partie introductive on va essayer de cerner les contours des
+concepts généraux du projet. L'intêret de cette partie est d'expliquer
+notre motivation pour ce sujet, de comprendre en quoi réside
+l'innovation dedans. Certes, le MDSE est un concept qui excite depuis
+longtemps, et plusieurs méthodes et outils intéressants comme les DSL et
+EMF avaient un potentiel énorme. Sur la même longueur d'onde plusieurs
+format de représentation des données ont étaient adoptées largement par
+la communité, à voire YAML pour docker-compose, spring configuration,
+GROOVY pour gradle, etc. Mais, plusieurs technologies comme JDL adoptent
+des expressions verbeuses. De ce fait nous proposons pour JIHPSTER une
+transformation du modèle en YAML. Ce projet est potentiellement
+intêressant, puisque il permet de créer de nouvelle option qui permet
+des créer des applications ayants des structures un tant soit peu
+complexes.
+
+
+\begin{enumerate}
+    \def\labelenumi{\arabic{enumi}.}
+    \item
+      \textbf{C'est quoi YAML}\\
+      YAML est une format de représentation de données simple inspirée de XML,
+      JSON et python. Il permet de créer des fichiers de configuration. L'idée
+      de YAML est que presque toute donnée peut être représentée par
+      combinaison de listes, et clé-valeur. La syntaxe du flux YAML est
+      relativement simple, efficace, moins verbeuse que du XML.
+
+    \item
+      \textbf{YAML 2 JDL}\\    
+      C'est quoi une DSL? Domaine specific languages, sont les languages dont
+      les spécifications sont conçues pour répondre aux contraintes d'un
+      domaine d'application précis. Il s'oppose conceptuellement aux langages
+      de programmation classiques (ou généralistes) comme Java ou C, qui
+      tendent à traiter un ensemble de domaines.
+      D'aprés le papier de recherche de Jean Bézivin, Hugo Bruneliere,
+      Frédéric Jouault, et Ivan Kurtev intitulé "Model engineering support for
+      tool interoperability":
+      \begin{quote}
+        \textit{
+            In our work we have a specific bias to using "agile metamodeling" with
+            small metamodels. This contradicts many mainstream proposals that use
+            large and predefined "one size fits all" metamodels like UML 2.0. We
+            need more experiments to assess the advantages and drawbacks of each of
+            these approaches named below "agile modeling" and "monolithic modeling".
+        }
+    \end{quote}
+      D'aprés ce qui précède, nous avons pensé que ça serait trés interessant
+      de réaliser un DSL pour JDL en s'inspirant de YAML.
+
+    \item
+      \textbf{C'est quoi JHIPSTER?}\\
+      JHipster est un générateur d'application libre et open source utilisé pour développer rapidement des applications Web modernes en utilisant principalement le framework Spring. JHipster fournit des outils pour générer un projet avec côté serveur, une pile Java (à l'aide de Spring Boot) et côté client un frontal Web adaptatif.
+
+    \item
+      \textbf{C'est quoi JDL?}\\
+      Le JDL est un langage de domaine spécifique à JHipster où vous pouvez
+      décrire toutes vos applications, déploiements, entités et leurs
+      relations dans un seul fichier (ou plusieurs) avec une syntaxe
+      conviviale. À la fin, on arrivera à créer un fichier JDL et sa
+      visualisation UML.
+
+\end{enumerate}
+
+La syntax JDL est structré sout format des propriétés, option, valeur.
+C'est propriétés sont divisées en plusieurs catégories qui sont
+principalement:
+
+\section{La syntaxe de JDL}
+
+\subsection{Application}
+
+La déclaration d'une application en JDL se fait comme suit:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{application \{}
+\NormalTok{  config \{}
+\NormalTok{    \textless{}application option name\textgreater{} \textless{}application option value\textgreater{}}
+\NormalTok{  \}}
+\NormalTok{  [entities \textless{}application entity list\textgreater{}]}
+\NormalTok{  [\textless{}options\textgreater{}]}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\item[$\blacksquare$]
+  Application configuration keys/values are specified under config
+  (which must be inside application)
+\item[$\blacksquare$]
+  There can be 0, 1 or any application option as you want (provided they
+  are valid)
+\item[$\blacksquare$]
+  Entities that will be generated inside the application are listed via
+  entities, this is the recommended way to generate entities in
+  applications.
+\item[$\blacksquare$]
+  This can be omitted but generating entities inside the app would
+  require doing it:
+\item[$\blacksquare$]
+  from another JDL file inside the app or with the CLI
+\item[$\blacksquare$]
+  The entities keyword is optional: you can omit it, but every entity in
+  the JDL file will be generated inside the application\\
+  Applications can have regular options (like dto or service), more
+  information in the next section.
+\end{itemize}
+
+\subsection{Entité}
+
+La déclaration d'une entité en JDL se fait comme suit:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{[\textless{}entity javadoc\textgreater{}]}
+\NormalTok{[\textless{}entity annotation\textgreater{}*]}
+\NormalTok{entity \textless{}entity name\textgreater{} [(\textless{}table name\textgreater{})] \{}
+\NormalTok{  [\textless{}field javadoc\textgreater{}]}
+\NormalTok{  [\textless{}field annotation\textgreater{}*]}
+\NormalTok{  \textless{}field name\textgreater{} \textless{}field type\textgreater{} [\textless{}validation\textgreater{}*]}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\item[$\blacksquare$]
+  \texttt{\textless{}entity\ name\textgreater{}} the name of the entity,
+\item[$\blacksquare$]
+  \texttt{\textless{}field\ name\textgreater{}} the name of one field of
+  the entity,
+\item[$\blacksquare$]
+  \texttt{\textless{}field\ type\textgreater{}} the JHipster supported
+  type of the field,\\
+  and as an option:
+\item[$\blacksquare$]
+  \texttt{\textless{}entity\ javadoc\textgreater{}} the documentation of
+  the entity,
+\item[$\blacksquare$]
+  \texttt{\textless{}entity\ annotation\textgreater{}} the options for
+  the entity (see Options for a complete list of available options),
+\item[$\blacksquare$]
+  \texttt{\textless{}table\ name\textgreater{}} the database table name
+  (if you want to specify something different that the name
+  automatically computed from the entity name),
+\item[$\blacksquare$]
+  \texttt{\textless{}field\ javadoc\textgreater{}} the documentation of
+  the field,
+\item[$\blacksquare$]
+  \texttt{\textless{}field\ annotation\textgreater{}} the options for
+  the field,
+\item[$\blacksquare$]
+  \texttt{\textless{}validation\textgreater{}} the validations for the
+  field.
+\end{itemize}
+
+\subsection{Énumération}
+
+La déclaration d'une énumération en JDL se fait comme suit:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{enum \textless{}enum name\textgreater{} \{}
+\NormalTok{  \textless{}ENUM KEY\textgreater{} [(\textless{}enum value\textgreater{})]}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\item[$\blacksquare$]
+  Enumeration entry values are mandatory and uppercase keys must be used.
+\item[$\blacksquare$]
+  Enumeration entry values are optional, and must be wrapped inside.
+  parenthesises
+\end{itemize}
+
+
+\subsection{Relations}
+
+La déclaration d'une relations en JDL se fait comme suit:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{relationship (OneToMany | ManyToOne | OneToOne | ManyToMany) \{}
+\NormalTok{  \textless{}from entity\textgreater{}[\{\textless{}relationship name\textgreater{}[(\textless{}display field\textgreater{})]\}] to \textless{}to entity\textgreater{}[\{\textless{}relationship name\textgreater{}[(\textless{}display field\textgreater{})]\}]+}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\texttt{(OneToMany\ \textbar{}\ ManyToOne\textbar{}\ OneToOne\ \textbar{}\ ManyToMany)}
+is the type of your relationship,
+
+\begin{itemize}
+\item[$\blacksquare$]
+  \texttt{\textless{}from\ entity\textgreater{}} is the name of the
+  entity owner of the relationship: the source,
+\item[$\blacksquare$]
+  \texttt{\textless{}to\ entity\textgreater{}}is the name of the entity
+  where the relationship goes to: the destination,
+\item[$\blacksquare$]
+  \texttt{\textless{}relationship\ name\textgreater{}} is the name of
+  the field having the other end as type,
+\item[$\blacksquare$]
+  \texttt{\textless{}display\ field\textgreater{}} is the name of the
+  field that should show up in select boxes (default: id),
+\item[$\blacksquare$]
+  \texttt{required} whether the injected field is required.
+\item[$\blacksquare$]
+  \texttt{with\ jpaDerivedIdentifier} whether \texttt{@MapsId} is used
+  for the association (applicable only for one-to-one)
+\item[$\blacksquare$]
+  And you can have more than one relationship body
+\item[$\blacksquare$]
+\end{itemize}
+
+\subsection{Options}
+
+La déclaration d'une options en JDL se fait comme suit:
+
+In JHipster, you can specify options for your entities such as
+pagination or DTO. You can do the same with the JDL, either with
+annotations on the entity, or with the following syntax.
+
+\subsection{Déploiement}
+
+La déclaration d'une déploiement en JDL se fait comme suit:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{deployment \{}
+\NormalTok{  \textless{}deployment option name\textgreater{} \textless{}deployment option value\textgreater{}}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Similar to applications, deployment declaration works by specifying
+option keys \& values.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Exemple de fichier JDL}
+\end{enumerate}
+
+\subsection{Exemple des microservices}
+
+La partie suivante représente un exemple simple d'application composée
+en plusieur microservices.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{application \{}
+\NormalTok{  config \{}
+\NormalTok{    baseName twitter,}
+\NormalTok{    applicationType gateway,}
+\NormalTok{    packageName com.myapp,}
+\NormalTok{    authenticationType jwt,}
+\NormalTok{    prodDatabaseType postgresql,}
+\NormalTok{    clientFramework react}
+\NormalTok{  \}}
+\NormalTok{  entities *}
+\NormalTok{\}}
+
+\NormalTok{application \{}
+\NormalTok{  config \{}
+\NormalTok{    baseName tweetService,}
+\NormalTok{    applicationType microservice,}
+\NormalTok{    packageName com.myapp,}
+\NormalTok{    authenticationType jwt,}
+\NormalTok{    prodDatabaseType postgresql,}
+\NormalTok{  \}}
+\NormalTok{  entities User, Tweet}
+\NormalTok{\}}
+
+\NormalTok{application \{}
+\NormalTok{  config \{}
+\NormalTok{    baseName searchService,}
+\NormalTok{    applicationType microservice,}
+\NormalTok{    packageName com.myapp,}
+\NormalTok{    authenticationType jwt,}
+\NormalTok{    prodDatabaseType postgresql}
+\NormalTok{  \}}
+\NormalTok{  entities User, Tweet}
+\NormalTok{\}}
+
+\NormalTok{application \{}
+\NormalTok{  config \{}
+\NormalTok{    baseName userTimeLineService,}
+\NormalTok{    applicationType microservice,}
+\NormalTok{    packageName com.myapp,}
+\NormalTok{    authenticationType jwt,}
+\NormalTok{    prodDatabaseType postgresql}
+\NormalTok{  \}}
+\NormalTok{  entities User, Tweet}
+\NormalTok{\}}
+
+\NormalTok{application \{}
+\NormalTok{  config \{}
+\NormalTok{    baseName homeTimeLineService,}
+\NormalTok{    applicationType microservice,}
+\NormalTok{    packageName com.myapp,}
+\NormalTok{    authenticationType jwt,}
+\NormalTok{    prodDatabaseType postgresql}
+\NormalTok{  \}}
+\NormalTok{  entities User, Tweet}
+\NormalTok{\}}
+
+\NormalTok{application \{}
+\NormalTok{  config \{}
+\NormalTok{    baseName socialGraphService,}
+\NormalTok{    applicationType microservice,}
+\NormalTok{    packageName com.myapp,}
+\NormalTok{    authenticationType jwt,}
+\NormalTok{    prodDatabaseType postgresql}
+\NormalTok{  \}}
+\NormalTok{  entities User}
+\NormalTok{\}}
+
+\NormalTok{application \{}
+\NormalTok{  config \{}
+\NormalTok{    baseName directMessagesService,}
+\NormalTok{    applicationType microservice,}
+\NormalTok{    packageName com.myapp,}
+\NormalTok{    authenticationType jwt,}
+\NormalTok{    prodDatabaseType postgresql}
+\NormalTok{  \}}
+\NormalTok{  entities User, Message}
+\NormalTok{\}}
+
+\NormalTok{entity Comment \{}
+\NormalTok{	id Long required,}
+\NormalTok{    content String required,}
+\NormalTok{    userId Long required}
+\NormalTok{\}}
+
+\NormalTok{entity Tweet \{}
+\NormalTok{	id Long required,}
+\NormalTok{    content String required}
+\NormalTok{\}}
+
+\NormalTok{entity User \{}
+\NormalTok{	id Long required,}
+\NormalTok{    userName String required,}
+\NormalTok{    fullName String required}
+\NormalTok{\}}
+
+\NormalTok{entity Message \{}
+\NormalTok{	id Long required,}
+\NormalTok{    content String required,}
+\NormalTok{    senderId Long required,}
+\NormalTok{    receverId Long required}
+\NormalTok{\}}
+
+\NormalTok{relationship OneToMany \{}
+\NormalTok{  User to Message,}
+\NormalTok{  Tweet to Comment}
+\NormalTok{\}}
+
+\NormalTok{relationship ManyToMany \{}
+\NormalTok{  User to User,}
+\NormalTok{  User to Tweet}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}

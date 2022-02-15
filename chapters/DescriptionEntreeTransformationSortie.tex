@@ -1,0 +1,151 @@
+
+\hypertarget{ruxe9alisation-et-gestion-du-projet}{%
+\subsection{Réalisation et gestion du
+projet}\label{ruxe9alisation-et-gestion-du-projet}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Description des entrées sorties}
+\end{enumerate}
+
+Dans ce projet nous avons rencontré trois termes principaux: T2M, M2M,
+M2T.
+
+\begin{itemize}
+\item
+  La transformation text-à-modèle est la première partie dans laquelle
+  on reçoit en entrée un fichier \texttt{.yml}. Il a la syntaxe normal
+  de \texttt{YAML} avec respect des régles définit en méta-modèle créé
+  auparavant. Cela se manifeste par l'utilisation des mots-clés définit
+  en \texttt{xtext} et inspirée du méta-modèles.\\
+  \begin{figure}[H]
+    \begin{center}
+        \fbox{
+        \includegraphics[width=16cm]{issues.png}
+        }
+        \caption{}
+    \end{center}
+\end{figure}
+\item
+  L'étape qui suit est la transformation M2M. Cella, se fait en se
+  basant sur le modèle généré aprés la tranformation T2M. les deux
+  modèles générée sont des fichiers \texttt{XML}. L'outil de la
+  transformation utilisé est \texttt{ATL}. À la base du fichier
+  \texttt{main.atl}, où on a définit les régles de la transformation, on
+  génére le modèle \texttt{JDL}.\\
+  \begin{figure}[H]
+    \begin{center}
+        \fbox{
+        \includegraphics[width=16cm]{issues.png}
+        }
+        \caption{}
+    \end{center}
+\end{figure}
+\item
+  Enfin, on arrive à effectuer un tranformation \texttt{M2T} en
+  utilisant \texttt{xtext} une autre fois. Ceci permet de générer un
+  fichier \texttt{.jdl}, réspectant la syntaxe de \texttt{JDL}.\\
+  \begin{figure}[H]
+    \begin{center}
+        \fbox{
+        \includegraphics[width=16cm]{issues.png}
+        }
+        \caption{}
+    \end{center}
+\end{figure}
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Mode de travail}
+\end{enumerate}
+
+Il est primordial de bien gérer chaque projet et d'avoir une structure
+claire et optimisée à suivre. Du coût, nous avons utiliser les outils
+offers par la platforme Github pour la gestion de ce projet:
+
+\begin{itemize}
+\item
+  Chaque tâche est représenté par un "issue", quoi doit être assigné
+  manuallement à un memebre d'équipe:\\
+  \begin{figure}[H]
+    \begin{center}
+        \fbox{
+        \includegraphics[width=16cm]{issues.png}
+        }
+        \caption{}
+    \end{center}
+\end{figure}
+\item
+  Chaque issue est représenté par un ticket sur un tableau ayant la même
+  structure comme les tableux trello. Il contient touts les informations
+  necessaire sur le type, la définition, et l'état d'issue qu'en
+  concerne:\\
+  \begin{figure}[H]
+    \begin{center}
+        \fbox{
+        \includegraphics[width=16cm]{mode-trello.png}
+        }
+        \caption{}
+    \end{center}
+\end{figure}
+\item
+  Le modèle de tableau peut être représenté aussi sous-forme d'un tableau
+  contenant les mêmes informations d'une manières plus facile à
+  parcourir:\\
+  \begin{figure}[H]
+    \begin{center}
+        \fbox{
+        \includegraphics[width=16cm]{mode-table.png}
+        }
+        \caption{}
+    \end{center}
+\end{figure}
+\item
+  Le cycle de vie d'un ticket dépend complétement de l'issue qu'en
+  concerne. Il se crée, prendre les dernières modification du issue, et
+  se label comme terminer si le issue est cloturé:\\
+  \begin{figure}[H]
+    \begin{center}
+        \fbox{
+        \includegraphics[width=16cm]{mode-automation.png}
+        }
+        \caption{}
+    \end{center}
+\end{figure}
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Structure du projet}
+\end{enumerate}
+
+La téchnologie utilisée dans ce projet est EMF. qui représente un
+ensemble des outils trés puissants pour le MDSE.
+
+\begin{itemize}
+\item
+  Le projet à la structure suivante:\\
+  \begin{figure}[H]
+    \begin{center}
+        \fbox{
+        \includegraphics[width=16cm]{eclipse-jdl.png}
+        }
+        \caption{}
+    \end{center}
+\end{figure}
+  
+\item
+  Aussi pour YAML:\\
+  \begin{figure}[H]
+    \begin{center}
+        \fbox{
+        \includegraphics[width=16cm]{eclipse_yaml.png}
+        }
+        \caption{}
+    \end{center}
+\end{figure}
+\end{itemize}
