@@ -1,144 +1,54 @@
-\documentclass[]{report}
-\usepackage{amsmath,amssymb}
-\usepackage{lmodern}
-\usepackage[T1]{fontenc}
-\usepackage{amsmath,amssymb}
-\usepackage{lmodern}
-\usepackage[french]{babel}
-\usepackage{setspace}
-\usepackage{xcolor}
-\usepackage[headheight=13pt,top=3cm, bottom=2cm, left=1cm, right=1cm]{geometry}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
-\usepackage{hyperref}
-\usepackage{wrapfig}
-\hypersetup{
-    colorlinks=true,
-    linkcolor=black,
-    citecolor=black,
-    filecolor=black,
-    urlcolor=black,
-}
-% if pdftex, luatex, or xetex
-\usepackage{iftex}
-\ifPDFTeX
-  \usepackage[T1]{fontenc}
-  \usepackage[utf8]{inputenc}
-  \usepackage{textcomp}
-\else 
-  \usepackage{unicode-math}
-  \defaultfontfeatures{Scale=MatchLowercase}
-  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-\fi
-\usepackage{xcolor}
-\urlstyle{same}
-\usepackage{color}
-\usepackage{fancyvrb}
-\newcommand{\VerbBar}{|}
-\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-\newenvironment{Shaded}{}{}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
-\newcommand{\BuiltInTok}[1]{#1}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{#1}}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{#1}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{#1}}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{#1}}}
-\newcommand{\ExtensionTok}[1]{#1}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{#1}}
-\newcommand{\ImportTok}[1]{#1}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{#1}}}
-\newcommand{\NormalTok}[1]{#1}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{#1}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{#1}}
-\newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{#1}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{#1}}}}
-\usepackage{float}
-\usepackage{graphicx}
-\usepackage{caption}
-\usepackage{subcaption}
-\graphicspath{{images/}}
+\begin{titlepage}
+    \begin{center}
+        \begin{figure}[!h]
+            \vspace{- 2 cm}
+            \hspace{ 0 cm}
+            \includegraphics[width=9em]{ensias.jpeg}
+        \end{figure}
+        \begin{figure}[!h]
+            \vspace{- 3.34cm}
+            \hspace{15cm}
+            \includegraphics[width=10em]{um5.jpeg}
+        \end{figure}
+    \end{center}
 
-\author{Kotbi Abderrahmane, El Hafi Abdessamad}
-\date{Februray 15th, 2022}
+    \begin{center}
+        \begin{center}
+            \noindent \hspace{ 0.4 cm}{\LARGE \textsc{Rapport du projet IDM}}\\
+        \end{center}
+        \begin{center}
+            \rule{0.9\linewidth}{1pt}
+        \end{center}
+        \vspace*{0.2cm}
+        \noindent \hspace{ 0.3 cm }\Huge \textbf{Réalisation d'une transformation YAML to JDL}
+        \begin{center}
+            \rule{0.9\linewidth}{1pt}
+        \end{center}
+        \large
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[scale=0.5]{logo.png}
+            \end{center}
+        \end{figure}
+        \textbf{\emph{ Encadré par: Pr. M. EL Hamlaoui}}
+        \raggedright{\rule{0.7\linewidth}{2pt}}\\
+        \textbf{\emph{
+                Préparé par:\\
+                \begin{itemize}
+                    \item[•] KOTBI Abderrahamane
+                    \item[•] El Hafi Abdessamad
+                    \item[•] El Fakouri Fouad
+                    \item[•] Eddeghal Mohammed
+                \end{itemize}
+            }}
+        \begin{center}
+            \rule{0.9\linewidth}{1pt}\\
+            \Large\emph{
+                Filière Génie Logiciel\\
+                Année universitaire: 2021/2022
+            }
+        \end{center}
 
-\begin{document}
 
-\begin{doublespace}
-
-\input{chapters/titlepage.tex}
-
-\newpage
-
-\pagenumbering{roman}
-\setcounter{page}{1}
-
-\tableofcontents
-
-\newpage
-
-\listoffigures
-\addcontentsline{toc}{chapter}{Table des figures}
-
-\newpage
-
-\chapter*{\centering Liste des abréviations}
-\addcontentsline{toc}{chapter}{Liste des abréviations}
-\begin{itemize}
-    \item[•] \textbf{JDL:} JHipster domaine language.
-    \item[•] \textbf{YAML/YML:} Yet another markup language.
-    \item[•] \textbf{T2M:} Transformation text to model.
-    \item[•] \textbf{M2M:} Transformation model to model.
-    \item[•] \textbf{M2T:} Transformation model to model.
-    \item[•] \textbf{DSL:} Domaine specific language.
-\end{itemize}
-
-\newpage
-
-\pagenumbering{arabic}
-\setcounter{page}{1}
-
-\chapter{Objectifs et description foncitionnelle du projet}
-\fancyhead[L]{\textbf{Chapitre \thechapter: Objectifs et description foncitionnelle du projet}}
-\fancyhead[R]{\hspace*{5cm}}
-\input{chapters/Objectifs&DescriptionFoncitionnelle.tex}	
-
-\chapter{Description des méta-modèles}
-\fancyhead[L]{\textbf{Chapitre \thechapter: Description des méta-modèles}}
-\fancyhead[R]{\hspace*{5cm}}
-\input{chapters/DescriptionMetaModels.tex}	
-
-\chapter{Description des entrées, des transformations et des sorties}
-\fancyhead[L]{\textbf{Chapitre \thechapter: Description des entrées, des transformations et des sorties}}
-\fancyhead[R]{\hspace*{5cm}}
-\input{chapters/DescriptionEntreeTransformationSortie.tex}
-
-\newpage
-
-\appendix
-\pagenumbering{alph} \setcounter{page}{1}
-\chapter{Références}
-
-\begin{itemize}
-  \item[•] \href{https://github.com/abdorah/model-based-architecture-yml-jdl}{\textit{Dépôt GitHub du projet}}
-\end{itemize}
-
-\end{doublespace}
-
-\end{document}
+    \end{center}
+\end{titlepage}
