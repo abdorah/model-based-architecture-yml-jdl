@@ -1,4 +1,4 @@
-\documentclass[a4paper]{report}
+\documentclass[]{report}
 \usepackage{amsmath,amssymb}
 \usepackage{lmodern}
 \usepackage[T1]{fontenc}
@@ -11,6 +11,7 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \usepackage{hyperref}
+\usepackage{wrapfig}
 \hypersetup{
     colorlinks=true,
     linkcolor=black,
@@ -114,7 +115,7 @@
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 
-\author{Kotbi Abderrahmane}
+\author{Kotbi Abderrahmane, El Hafi Abdessamad}
 \date{Februray 15th, 2022}
 
 \begin{document}
@@ -154,17 +155,17 @@
 \chapter*{Objectifs et description foncitionnelle du projet}
 \fancyhead[L]{\textbf{Chapitre: Objectifs et description foncitionnelle du projet}}
 \fancyhead[R]{\hspace*{5cm}}
-\include{chapters/Objectifs&DescriptionFoncitionnelle.tex}	
+\input{chapters/Objectifs&DescriptionFoncitionnelle.tex}	
 
 \chapter*{Description des méta-modèles}
 \fancyhead[L]{\textbf{Chapitre: Description des méta-modèles}}
 \fancyhead[R]{\hspace*{5cm}}
-\include{chapters/DescriptionMetaModels.tex}	
+\input{chapters/DescriptionMetaModels.tex}	
 
 \chapter*{Description des entrées, des transformations et des sorties}
 \fancyhead[L]{\textbf{Chapitre: Description des entrées, des transformations et des sorties}}
 \fancyhead[R]{\hspace*{5cm}}
-\include{chapters/DescriptionEntreeTransformationSortie.tex}	
+\input{chapters/DescriptionEntreeTransformationSortie.tex}	
 
 \end{doublespace}
 
